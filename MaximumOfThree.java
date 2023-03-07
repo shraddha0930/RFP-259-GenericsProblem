@@ -34,6 +34,22 @@ public class MaximumOfThree {
         System.out.println("The maximum Float number is: " + maximumNumber);
     }
 
+    public static void findMaximum(String firstStr, String secondStr, String thirdStr) {
+        String maximumStr;
+
+        if(firstStr.compareTo(secondStr)>0 && firstStr.compareTo(thirdStr)>0) {
+            maximumStr = firstStr;
+        }
+        else if(secondStr.compareTo(firstStr)>0 && secondStr.compareTo(thirdStr)>0) {
+            maximumStr = secondStr;
+        }
+        else {
+            maximumStr = thirdStr;
+        }
+
+        System.out.println("The maximum Three String is: " + maximumStr);
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome To Computing Maximum Of Three Numbers Using Java Generics");
@@ -44,6 +60,11 @@ public class MaximumOfThree {
         System.out.println("Enter three float number:");
         Float firstNum = scanner.nextFloat(),secondNum = scanner.nextFloat(), thirdNum = scanner.nextFloat();
         findMaximum(firstNum,secondNum,thirdNum);
+        System.out.println("Enter three  string:");
+        String firstStr = scanner.next(),secondStr = scanner.next(), thirdStr = scanner.next();
+        findMaximum(firstStr,secondStr,thirdStr);
+
+
     }
 
 }
