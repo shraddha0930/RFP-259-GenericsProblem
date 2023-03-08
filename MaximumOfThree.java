@@ -51,7 +51,7 @@ public class MaximumOfThree<T extends Comparable<T>>  {
 
         System.out.println("The maximum Three String is: " + maximumStr);
     }
-    public static <T extends Comparable<T>> T findMax(T firstNumber, T secondNumber, T thirdNumber, T forthNumber) {
+    public static <T extends Comparable<T>> T testMaximum(T firstNumber, T secondNumber, T thirdNumber, T forthNumber) {
         T maximumNumber;
 
         if(firstNumber.compareTo(secondNumber)>0 && firstNumber.compareTo(thirdNumber)>0 && firstNumber.compareTo(forthNumber)>0) {
@@ -66,8 +66,11 @@ public class MaximumOfThree<T extends Comparable<T>>  {
         else{
             maximumNumber= forthNumber;
         }
-        System.out.println("The maximum is: " + maximumNumber);
         return maximumNumber;
+    }
+
+    public static <T> void printMax(T firstNumber, T secondNumber, T thirdNumber, T forthNumber, T maximumNumber){
+        System.out.println("The maximum is: " + maximumNumber);
     }
 
     public static void main(String[] args) {
@@ -101,9 +104,9 @@ public class MaximumOfThree<T extends Comparable<T>>  {
                     break;
                 case 4:
                     System.out.println("Using Generics");
-                    MaximumOfThree.findMax(firstNumber ,secondNumber,thirdNumber,forthNumber);
-                    MaximumOfThree.findMax(firstNum,secondNum,thirdNum,forthNum);
-                    MaximumOfThree.findMax(firstStr,secondStr,thirdStr,forthStr);
+                    MaximumOfThree.testMaximum(firstNumber ,secondNumber,thirdNumber,forthNumber);
+                    MaximumOfThree.testMaximum(firstNum,secondNum,thirdNum,forthNum);
+                    MaximumOfThree.testMaximum(firstStr,secondStr,thirdStr,forthStr);
                     break;
                 default :
                     break;
