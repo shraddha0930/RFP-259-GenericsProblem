@@ -51,17 +51,20 @@ public class MaximumOfThree<T extends Comparable<T>>  {
 
         System.out.println("The maximum Three String is: " + maximumStr);
     }
-    public static <T extends Comparable<T>> T findMax(T firstNumber, T secondNumber, T thirdNumber) {
+    public static <T extends Comparable<T>> T findMax(T firstNumber, T secondNumber, T thirdNumber, T forthNumber) {
         T maximumNumber;
 
-        if(firstNumber.compareTo(secondNumber)>0 && firstNumber.compareTo(thirdNumber)>0) {
+        if(firstNumber.compareTo(secondNumber)>0 && firstNumber.compareTo(thirdNumber)>0 && firstNumber.compareTo(forthNumber)>0) {
             maximumNumber = firstNumber;
         }
-        else if(secondNumber.compareTo(firstNumber)>0 && secondNumber.compareTo(thirdNumber)>0) {
+        else if(secondNumber.compareTo(firstNumber)>0 && secondNumber.compareTo(thirdNumber)>0 && secondNumber.compareTo(forthNumber)>0) {
             maximumNumber = secondNumber;
         }
-        else {
+        else if(thirdNumber.compareTo(forthNumber)>0){
             maximumNumber = thirdNumber;
+        }
+        else{
+            maximumNumber= forthNumber;
         }
         System.out.println("The maximum is: " + maximumNumber);
         return maximumNumber;
@@ -72,13 +75,13 @@ public class MaximumOfThree<T extends Comparable<T>>  {
         System.out.println("Welcome To Computing Maximum Of Three Numbers Using Java Generics");
 
         System.out.println("Enter three  integer number:");
-        Integer firstNumber = scanner.nextInt(), secondNumber = scanner.nextInt() , thirdNumber = scanner.nextInt();
+        Integer firstNumber = scanner.nextInt(), secondNumber = scanner.nextInt() , thirdNumber = scanner.nextInt(),forthNumber = scanner.nextInt();
         findMaximum(firstNumber ,secondNumber,thirdNumber);
         System.out.println("Enter three float number:");
-        Float firstNum = scanner.nextFloat(),secondNum = scanner.nextFloat(), thirdNum = scanner.nextFloat();
+        Float firstNum = scanner.nextFloat(),secondNum = scanner.nextFloat(), thirdNum = scanner.nextFloat(),forthNum = scanner.nextFloat();
         findMaximum(firstNum,secondNum,thirdNum);
         System.out.println("Enter three  string:");
-        String firstStr = scanner.next(),secondStr = scanner.next(), thirdStr = scanner.next();
+        String firstStr = scanner.next(),secondStr = scanner.next(), thirdStr = scanner.next(),forthStr = scanner.next();
         findMaximum(firstStr,secondStr,thirdStr);
 
         int num = 0;
@@ -98,9 +101,9 @@ public class MaximumOfThree<T extends Comparable<T>>  {
                     break;
                 case 4:
                     System.out.println("Using Generics");
-                    MaximumOfThree.findMax(firstNumber ,secondNumber,thirdNumber);
-                    MaximumOfThree.findMax(firstNum,secondNum,thirdNum);
-                    MaximumOfThree.findMax(firstStr,secondStr,thirdStr);
+                    MaximumOfThree.findMax(firstNumber ,secondNumber,thirdNumber,forthNumber);
+                    MaximumOfThree.findMax(firstNum,secondNum,thirdNum,forthNum);
+                    MaximumOfThree.findMax(firstStr,secondStr,thirdStr,forthStr);
                     break;
                 default :
                     break;
