@@ -3,10 +3,8 @@ package assignments.GenericsProblem;
 import java.util.Scanner;
 
 public class MaximumOfThree {
-    static Integer firstNumber = 15 ,secondNumber = 20 , thirdNumber = 10;
-    static Float firstNum = 10.5f ,secondNum = 20.2f , thirdNum = 25.2f;
-    static String firststr = "Shraddha", secondstr = "Manish", thirdstr = "Mokshit";
-    static int num;
+
+
     public static void findMaximum(Integer firstNumber, Integer secondNumber, Integer thirdNumber) {
         Integer maximumNumber;
 
@@ -72,9 +70,20 @@ public class MaximumOfThree {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome To Computing Maximum Of Three Numbers Using Java Generics");
 
-        while(num != 5){
+        System.out.println("Enter three  integer number:");
+        Integer firstNumber = scanner.nextInt(), secondNumber = scanner.nextInt() , thirdNumber = scanner.nextInt();
+        findMaximum(firstNumber ,secondNumber,thirdNumber);
+        System.out.println("Enter three float number:");
+        Float firstNum = scanner.nextFloat(),secondNum = scanner.nextFloat(), thirdNum = scanner.nextFloat();
+        findMaximum(firstNum,secondNum,thirdNum);
+        System.out.println("Enter three  string:");
+        String firstStr = scanner.next(),secondStr = scanner.next(), thirdStr = scanner.next();
+        findMaximum(firstStr,secondStr,thirdStr);
+
+        int num = 0;
+        while(num != 6){
             System.out.println("Enter a choice : \n 1.Max OF Three Integers \n 2.Max Of Three Floats \n 3.Max OF Three Characters "
-                    + "\n 4.Max Of three using generics method \n 5.Exit ");
+                    + "\n 4.Max Of three using generics method \n 5.Max Of three using generic class ");
             num = scanner.nextInt();
             switch(num) {
                 case 1:
@@ -84,13 +93,18 @@ public class MaximumOfThree {
                     findMaximum(firstNum,secondNum,thirdNum);
                     break;
                 case 3:
-                    findMaximum(firststr,secondstr,thirdstr);
+                    findMaximum(firstStr,secondStr,thirdStr);
                     break;
                 case 4:
                     System.out.println("Using Generics");
                     findMax(firstNumber ,secondNumber,thirdNumber);
                     findMax(firstNum,secondNum,thirdNum);
-                    findMax(firststr,secondstr,thirdstr);
+                    findMax(firstStr,secondStr,thirdStr);
+                    break;
+                case 5:
+                    System.out.println("The Maximum Integer Number is: " + MaximumTest.maximum(firstNumber ,secondNumber,thirdNumber));
+                    System.out.println("The Maximum Float Number is: " + MaximumTest.maximum(firstNum,secondNum,thirdNum));
+                    System.out.println("The Maximum String is: " + MaximumTest.maximum(firstStr,secondStr,thirdStr));
                     break;
                 default :
                     break;
