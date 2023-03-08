@@ -2,7 +2,7 @@ package assignments.GenericsProblem;
 
 import java.util.Scanner;
 
-public class MaximumOfThree {
+public class MaximumOfThree<T extends Comparable<T>>  {
 
 
     public static void findMaximum(Integer firstNumber, Integer secondNumber, Integer thirdNumber) {
@@ -51,7 +51,7 @@ public class MaximumOfThree {
 
         System.out.println("The maximum Three String is: " + maximumStr);
     }
-    public static <T extends Comparable<T>> void findMax(T firstNumber, T secondNumber, T thirdNumber) {
+    public static <T extends Comparable<T>> T findMax(T firstNumber, T secondNumber, T thirdNumber) {
         T maximumNumber;
 
         if(firstNumber.compareTo(secondNumber)>0 && firstNumber.compareTo(thirdNumber)>0) {
@@ -64,6 +64,7 @@ public class MaximumOfThree {
             maximumNumber = thirdNumber;
         }
         System.out.println("The maximum is: " + maximumNumber);
+        return maximumNumber;
     }
 
     public static void main(String[] args) {
@@ -81,7 +82,7 @@ public class MaximumOfThree {
         findMaximum(firstStr,secondStr,thirdStr);
 
         int num = 0;
-        while(num != 6){
+        while(num != 5){
             System.out.println("Enter a choice : \n 1.Max OF Three Integers \n 2.Max Of Three Floats \n 3.Max OF Three Characters "
                     + "\n 4.Max Of three using generics method \n 5.Max Of three using generic class ");
             num = scanner.nextInt();
@@ -97,14 +98,9 @@ public class MaximumOfThree {
                     break;
                 case 4:
                     System.out.println("Using Generics");
-                    findMax(firstNumber ,secondNumber,thirdNumber);
-                    findMax(firstNum,secondNum,thirdNum);
-                    findMax(firstStr,secondStr,thirdStr);
-                    break;
-                case 5:
-                    System.out.println("The Maximum Integer Number is: " + MaximumTest.maximum(firstNumber ,secondNumber,thirdNumber));
-                    System.out.println("The Maximum Float Number is: " + MaximumTest.maximum(firstNum,secondNum,thirdNum));
-                    System.out.println("The Maximum String is: " + MaximumTest.maximum(firstStr,secondStr,thirdStr));
+                    MaximumOfThree.findMax(firstNumber ,secondNumber,thirdNumber);
+                    MaximumOfThree.findMax(firstNum,secondNum,thirdNum);
+                    MaximumOfThree.findMax(firstStr,secondStr,thirdStr);
                     break;
                 default :
                     break;
